@@ -13,4 +13,8 @@ export class SalasService {
   public listar(){
     return this.http.get<any[]>('http://localhost:8080/salasDoEvento');
   }
+
+  public apagarSalas(id: number){
+    return this.http.delete('http://localhost:8080/salasDoEvento/' + id);
+  }
 }

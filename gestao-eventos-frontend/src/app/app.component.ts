@@ -54,4 +54,24 @@ export class AppComponent implements OnInit {
     })
   }
 
+  public apagarPessoa(id: number) {
+    this.pessoaService.apagar(id).subscribe();
+    this.pessoaService.listar().subscribe(pessoas => {
+      this.pessoas = pessoas;
+    })
+  }
+
+  public apagarSalas(id: number) {
+    this.salasDoEventoService.apagarSalas(id).subscribe();
+    this.salasDoEventoService.listar().subscribe(salasDoEvento => {
+      this.salasDoEvento = salasDoEvento;
+    })
+  }
+
+  public apagarCafes(id: number) {
+    this.espacosDeCafesService.apagarCafes(id).subscribe();
+    this.espacosDeCafesService.listar().subscribe(espacosDeCafe => {
+      this.espacosDeCafe = espacosDeCafe;
+    })
+  }
 }

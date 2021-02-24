@@ -13,4 +13,8 @@ export class CafesService {
   public listar(){
     return this.http.get<any[]>('http://localhost:8080/espacosDeCafe')
   }
+
+  public apagarCafes(id: number) {
+    return this.http.delete('http://localhost:8080/espacosDeCafe/' + id);
+  }
 }
