@@ -17,4 +17,8 @@ export class CafesService {
   public apagarCafes(id: number) {
     return this.http.delete('http://localhost:8080/espacosDeCafe/' + id);
   }
+
+  public salvar(cafes: any){
+    return this.http.post('http://localhost:8080/espacosDeCafe/', cafes);
+  }
 }

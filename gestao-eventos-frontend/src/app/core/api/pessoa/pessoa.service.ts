@@ -17,4 +17,7 @@ export class PessoaService {
   public apagar(id: number) {
     return this.http.delete('http://localhost:8080/pessoa/' + id);
   }
+  public salvar(pessoa: any){
+    return this.http.post('http://localhost:8080/pessoa', pessoa);
+  }
 }

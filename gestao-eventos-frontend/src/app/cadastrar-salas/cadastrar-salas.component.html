@@ -1,0 +1,12 @@
+<div class="p-fluid" [formGroup]="form">
+    <div class="p-field">
+        <label for="firstname1">Nome</label>
+        <input id="firstname1" formControlName="nomeDaSala" type="text" pInputText> 
+    </div>
+    <div class="p-field">
+        <label for="lastname1">Lotação</label>
+        <input id="lastname1" formControlName="lotacaoDaSala" type="text" pInputText> 
+    </div>
+</div>
+<br>
+<p-button (click)="salvar()" label="salvar"></p-button>

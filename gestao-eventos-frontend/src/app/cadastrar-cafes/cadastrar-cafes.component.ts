@@ -1,34 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PessoaService } from '../core/api/pessoa/pessoa.service';
+import { CafesService } from '../core/api/cafes/cafes.service';
 
 @Component({
-  selector: 'app-cadastrar-pessoa',
-  templateUrl: './cadastrar-pessoa.component.html',
-  styleUrls: ['./cadastrar-pessoa.component.css']
+  selector: 'app-cadastrar-cafes',
+  templateUrl: './cadastrar-cafes.component.html',
+  styleUrls: ['./cadastrar-cafes.component.css']
 })
-export class CadastrarPessoaComponent implements OnInit {
+export class CadastrarCafesComponent implements OnInit {
 
   public form: FormGroup;
 
   constructor(
     private formbuilder: FormBuilder,
-    private pessoaService: PessoaService,
+    private cafesService: CafesService,
     private router: Router
-
   ) { }
 
   ngOnInit(): void {
 
     this.form = this.formbuilder.group({
-      nome: [],
-      sobrenome: []
+      nomeEspacoCafe: [],
+      lotacaoEspacoCafe: []
     })
   }
-
   public salvar() {
-    this.pessoaService.salvar(this.form.getRawValue()).subscribe(() => {
+    this.cafesService.salvar(this.form.getRawValue()).subscribe(() => {
       this.router.navigate(['/']);
     })
   }

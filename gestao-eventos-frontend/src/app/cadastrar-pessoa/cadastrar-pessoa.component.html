@@ -1,1 +1,12 @@
-<p>cadastrar-pessoa works!</p>
+<div class="p-fluid" [formGroup]="form">
+    <div class="p-field">
+        <label for="firstname1">Nome</label>
+        <input id="firstname1" formControlName="nome" type="text" pInputText> 
+    </div>
+    <div class="p-field">
+        <label for="lastname1">Sobrenome</label>
+        <input id="lastname1" formControlName="sobrenome" type="text" pInputText> 
+    </div>
+</div>
+<br>
+<p-button (click)="salvar()" label="salvar"></p-button>

@@ -17,4 +17,8 @@ export class SalasService {
   public apagarSalas(id: number){
     return this.http.delete('http://localhost:8080/salasDoEvento/' + id);
   }
+
+  public salvar(salas: any){
+    return this.http.post('http://localhost:8080/salasDoEvento/', salas)
+  }
 }
