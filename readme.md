@@ -11,3 +11,10 @@
 - Acesse a pasta `gestao-eventos-frontend`,
 - Execute o comando `npm i` ,
 - Execute o comando `ng serve`
+### Instruções de utilização
+- Usar o botão `cadastrar` na aba pessoa para cadastrar a pessoa,
+- Na aba salas, usar o botão `cadastrar` para cadastrar as salas,
+- Na aba cafés, usar o botão `cadastrar` para cadastrar cafés,
+- Depois usar o botão `Ir para sala`, para colocar as pessoas na(s) sala(s).
+- E o botão `Ir para o café`, para colocar as pessoas no(s) espaço(s) de café(s).
+
