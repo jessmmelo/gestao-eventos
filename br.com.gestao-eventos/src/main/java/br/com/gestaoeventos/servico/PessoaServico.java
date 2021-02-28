@@ -33,7 +33,7 @@ public class PessoaServico {
 
 	public Pessoa buscar(Integer id) {
 		Optional<Pessoa> optional = pessoaRepositorio.findById(id);
-		if (optional.isEmpty()) {
+		if (!optional.isPresent()) {
 			return null;
 		} else {
 			return optional.get();

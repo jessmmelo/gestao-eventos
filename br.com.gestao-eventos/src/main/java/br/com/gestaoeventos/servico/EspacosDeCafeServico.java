@@ -25,7 +25,7 @@ public class EspacosDeCafeServico {
 
 	public EspacosDeCafe buscar(Integer id) {
 		Optional<EspacosDeCafe> optional = cafeRepositorio.findById(id);
-		if (optional.isEmpty()) {
+		if (!optional.isPresent()) {
 			return null;
 		} else {
 			return optional.get();

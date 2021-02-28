@@ -25,7 +25,7 @@ public class SalasDoEventoServico {
 
 	public SalasDoEvento buscar(Integer id) {
 		Optional<SalasDoEvento> optional = salasDoEventoRepositorio.findById(id);
-		if (optional.isEmpty()) {
+		if (!optional.isPresent()) {
 			return null;
 		} else {
 			return optional.get();
