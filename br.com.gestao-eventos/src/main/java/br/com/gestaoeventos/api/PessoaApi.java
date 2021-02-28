@@ -40,4 +40,14 @@ public class PessoaApi {
 	public void deletar(@PathVariable Integer id) {
 		pessoaServico.delete(id);
 	}
+	
+	@PostMapping("/sala")
+	public void sala() {
+		pessoaServico.alterarSala();
+	}
+	
+	@PostMapping("/cafes")
+	public void cafes() {
+		pessoaServico.alterarCafe();
+	}
 }

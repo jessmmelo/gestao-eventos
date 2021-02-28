@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
         }
       },
       {
-        label: 'Cafes', icon: 'pi pi-fw pi-heart', command: () => {
+        label: 'Cafés', icon: 'pi pi-fw pi-heart', command: () => {
           this.activeItem = this.items[2];
           this.espacosDeCafesService.listar().subscribe(dt => this.espacosDeCafe = dt);
         }
@@ -54,24 +54,48 @@ export class HomeComponent implements OnInit {
   }
 
   public apagarPessoa(id: number) {
-    this.pessoaService.apagar(id).subscribe();
-    this.pessoaService.listar().subscribe(pessoas => {
-      this.pessoas = pessoas;
-    })
+    this.pessoaService.apagar(id).subscribe(() => {
+      this.pessoaService.listar().subscribe(pessoas => {
+        this.pessoas = pessoas;
+      })
+    });
+   
   }
 
   public apagarSalas(id: number) {
-    this.salasDoEventoService.apagarSalas(id).subscribe();
-    this.salasDoEventoService.listar().subscribe(salasDoEvento => {
-      this.salasDoEvento = salasDoEvento;
-    })
+    this.salasDoEventoService.apagarSalas(id).subscribe(() => {
+      this.salasDoEventoService.listar().subscribe(salasDoEvento => {
+        this.salasDoEvento = salasDoEvento;
+      })
+    });
+    
   }
 
   public apagarCafes(id: number) {
-    this.espacosDeCafesService.apagarCafes(id).subscribe();
-    this.espacosDeCafesService.listar().subscribe(espacosDeCafe => {
-      this.espacosDeCafe = espacosDeCafe;
-    })
+    this.espacosDeCafesService.apagarCafes(id).subscribe(() => {
+      this.espacosDeCafesService.listar().subscribe(espacosDeCafe => {
+        this.espacosDeCafe = espacosDeCafe;
+      })
+    });
+    
+  }
+
+  public irParaSala(){
+    this.pessoaService.irParaSala().subscribe(() => {
+      this.pessoaService.listar().subscribe(pessoas => {
+        this.pessoas = pessoas;
+      })
+    } );
+
+  }
+
+  public irParaCafes(){
+    this.pessoaService.irParaCafes().subscribe(() => {
+      this.pessoaService.listar().subscribe(pessoas => {
+        this.pessoas = pessoas;
+      })
+    });
+
   }
 }
 

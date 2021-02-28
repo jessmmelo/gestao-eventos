@@ -20,4 +20,12 @@ export class PessoaService {
   public salvar(pessoa: any){
     return this.http.post('http://localhost:8080/pessoa', pessoa);
   }
+
+  public irParaSala(){
+    return this.http.post('http://localhost:8080/pessoa/sala', {});
+  }
+
+  public irParaCafes(){
+    return this.http.post('http://localhost:8080/pessoa/cafes', {});
+  }
 }
